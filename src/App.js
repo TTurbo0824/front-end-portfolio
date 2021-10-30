@@ -1,24 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Footer from './components/Footer';
+import MainPage from './pages/MainPage';
+import About from './pages/About';
+import Skills from './pages/Skills';
+import Projects from './pages/Projects';
+import styled from 'styled-components';
 
-function App() {
+const AppWrapper = styled.div`
+  * {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+  }
+  .App {
+    font-family: 'Noto Sans KR', sans-serif;
+  }
+`;
+
+function App () {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <AppWrapper>
+        <div className='App'>
+          <Switch>
+            <Route exact path='/' component={MainPage} />
+            <Route path='/about' component={About} />
+            <Route path='/skills' component={Skills} />
+            <Route path='/projects' component={Projects} />
+          </Switch>
+        </div>
+        <Footer />
+      </AppWrapper>
+    </BrowserRouter>
   );
 }
 
