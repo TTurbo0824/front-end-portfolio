@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 // import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 // import {faGithub} from '@fortawesome/free-brands-svg-icons';
-import { Colors } from '../components/utils/_var';
+import { Colors } from './utils/_var';
 
 const FooterWrapper = styled.div`
   .footer {

@@ -9,7 +9,7 @@ import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 const MainPageWrapper = styled.div`
   .main {
-    min-height: calc(100vh - 10.9rem);
+    /* min-height: calc(100vh - 10.9rem); */
   }
   .menu-container {
     &.active {
@@ -50,9 +50,11 @@ function MainPage () {
     if (window.innerWidth < 768) setNavState('deactive');
   }, []);
 
+  // console.log(navState);
   const handleClick = () => {
-    if (navState === 'deactive') setNavState('close');
-    else setNavState('deactive');
+    if (navState === 'active') setNavState('active');
+    else if (navState === 'deactive') setNavState('close');
+    // else setNavState('deactive');
   };
 
   const maintainNavState = () => {
