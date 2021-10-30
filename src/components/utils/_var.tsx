@@ -1,3 +1,5 @@
+import { createGlobalStyle } from 'styled-components';
+
 const Colors = {
   black: '#303030',
   darkGray: '#575757',
@@ -9,4 +11,12 @@ const Colors = {
   darkYellow: '#ffba01'
 };
 
-export { Colors };
+const GlobalStyle = createGlobalStyle`
+  .title {
+    margin: 2rem auto 1rem;
+    text-align: center;
+    font-size: 3.5rem;
+  }
+`;
+
+export { Colors, GlobalStyle };
