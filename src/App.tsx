@@ -1,10 +1,8 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Footer from './components/Footer';
 import MainPage from './pages/MainPage';
-import About from './pages/About';
-import Skills from './pages/Skills';
-import Projects from './pages/Projects';
 import styled from 'styled-components';
+import { Colors } from './components/utils/_var';
 
 const AppWrapper = styled.div`
   * {
@@ -13,20 +11,18 @@ const AppWrapper = styled.div`
     -moz-box-sizing: border-box;
   }
   .App {
+    background-color: ${Colors.backgroundColor};
     font-family: 'Noto Sans KR', sans-serif;
   }
 `;
 
-function App () {
+function App() {
   return (
     <BrowserRouter>
       <AppWrapper>
-        <div className='App'>
+        <div className="App">
           <Switch>
-            <Route exact path='/' component={MainPage} />
-            <Route path='/about' component={About} />
-            <Route path='/skills' component={Skills} />
-            <Route path='/projects' component={Projects} />
+            <Route exact path="/" component={MainPage} />
           </Switch>
         </div>
         <Footer />
