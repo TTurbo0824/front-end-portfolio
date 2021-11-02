@@ -4,8 +4,10 @@ import { Colors, GlobalStyle } from '../components/utils/_var';
 
 const SkillWrapper = styled.div`
   .main {
-    margin: 0 1.5rem;
-    ${media.large`margin: 0 auto; max-width: 75rem;`}
+    margin: 1.5rem 1.5rem 0;
+    border-top: 3px solid ${Colors.black};
+
+    ${media.large`margin: 1.5rem auto 0; max-width: 75rem;`}
     min-height: 22rem;
     background-color: ${Colors.beige};
     border-left: 3px solid ${Colors.black};
@@ -13,11 +15,10 @@ const SkillWrapper = styled.div`
   }
   .field {
     text-align: center;
-    /* font-family: 'Merriweather'; */
-    font-family: 'Arial';
-    font-size: 1rem;
+    font-size: 1.2rem;
+    font-family: 'Staatliches';
     padding: 0.3rem;
-    font-weight: bold;
+    /* font-weight: bold; */
     width: 100%;
     border-bottom: 2px solid black;
   }

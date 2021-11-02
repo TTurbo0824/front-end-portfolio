@@ -6,13 +6,14 @@ import { Colors, GlobalStyle } from '../components/utils/_var';
 
 const ProjectWrapper = styled.div`
   .main {
-    margin: 0 1.5rem;
+    margin: 1.5rem 1.5rem 0;
     min-height: 22rem;
-    ${media.large`margin: 0 auto; max-width: 75rem;`}
+    ${media.large`margin: 1.5rem auto 0; max-width: 75rem;`}
     background-color: ${Colors.beige};
     border-bottom: 3px solid ${Colors.black};
     border-left: 3px solid ${Colors.black};
     border-right: 3px solid ${Colors.black};
+    /* background-color: pink; */
   }
   .container {
     display: flex;
@@ -22,14 +23,14 @@ const ProjectWrapper = styled.div`
     display: grid;
     grid-template-areas: 'title' 'slide' 'explanation';
     grid-template-columns: 100%;
-    ${media.tablet`grid-template-areas: 'title title' 'slide explanation';`}
-    ${media.tablet`grid-template-columns: 50% 50%;`}
+    ${media.laptop`grid-template-areas: 'title title' 'slide explanation';`}
+    ${media.laptop`grid-template-columns: 50% 50%;`}
     margin: .5rem auto 2.5rem;
-    /* border-radius: 15px; */
     border: 2px solid black;
     min-height: 20rem;
-    ${media.tabletMini`width: 35rem;`}
-    ${media.tablet`width: 50rem;`}
+    width: 85%;
+    /* ${media.tabletMini`width: 35rem;`} */
+    ${media.tablet`width: 42rem;`}
     ${media.laptop`width: 55rem; min-height: 25rem;`}
     background-color: white;
     padding: 1rem;
@@ -37,23 +38,32 @@ const ProjectWrapper = styled.div`
   }
   .field {
     grid-area: title;
+    /* font-family: 'Merriweather'; */
+    font-size: 1.5rem;
+    font-family: 'Staatliches';
     text-align: center;
     padding-bottom: 1rem;
-    font-size: 1.2rem;
+  }
+  .korean {
+    display: inline;
+    font-weight: normal;
+    margin-right: 0.2rem;
+    font-family: 'Do Hyeon';
+    font-size: 1.35rem;
   }
   .alice-carousel ul li img {
-    width: 23rem;
+    width: 12rem;
+    ${media.tablet`width: 23rem;`}
     object-fit: cover;
     margin: auto;
   }
   .alice-carousel {
     justify-content: left;
-    /* height: 12rem; */
-    width: 23rem;
+    width: 12rem;
+    ${media.tablet`width: 23rem;`}
   }
   .image-container {
     grid-area: slide;
-    /* background-color: pink; */
   }
   .content {
     grid-area: explanation;
@@ -61,6 +71,10 @@ const ProjectWrapper = styled.div`
   }
   a {
     padding: 0;
+    color: ${Colors.gray};
+  }
+  a:hover {
+    color: black;
   }
   .content > ul {
     margin: 0;
@@ -77,6 +91,10 @@ const ProjectWrapper = styled.div`
   }
   .line:not(:first-child) {
     padding-top: 0.25rem;
+  }
+  .line:last-child {
+    padding-top: 0.5rem;
+    /* background-color: forestgreen; */
   }
 `;
 
@@ -185,7 +203,9 @@ function Projects() {
         </div>
         <div className="container">
           <div className="card">
-            <div className="field">하자 (Ha-Za)</div>
+            <div className="field">
+              <div className="korean">하자</div>(Ha-Za)
+            </div>
             <div className="image-container">
               <AliceCarousel mouseTracking infinite={true} items={M4MItems} />
             </div>
@@ -222,13 +242,15 @@ function Projects() {
               <ul>
                 <li>프론트엔드: 로그인 모달, 회원 가입 모달, 회원 정보 페이지 구현</li>
               </ul>
-              <div>사용 스택: TypeScript, React, Redux, styled-components</div>
+              <div className="line">사용 스택: TypeScript, React, Redux, styled-components</div>
             </div>
           </div>
         </div>
         <div className="container">
           <div className="card">
-            <div className="field">먼지아웃 (MunjiOut)</div>
+            <div className="field">
+              <div className="korean">먼지아웃</div> (MunjiOut)
+            </div>
             <div className="image-container">
               <AliceCarousel mouseTracking infinite={true} items={MunjiOutItems} />
             </div>

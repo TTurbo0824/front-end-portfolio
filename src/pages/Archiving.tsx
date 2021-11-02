@@ -8,45 +8,61 @@ import { Colors, GlobalStyle } from '../components/utils/_var';
 const ArchivingWrapper = styled.div`
   .main {
     min-height: 22rem;
-    background-color: mediumorchid;
+    margin: 1.5rem 1.5rem 0;
+    ${media.laptop`height: 26rem;`}
+    ${media.large`margin: 1.5rem auto 0; max-width: 75rem;`}
+    background-color: ${Colors.beige};
+    border-left: 3px solid ${Colors.black};
+    border-right: 3px solid ${Colors.black};
+    /* background-color: lime; */
   }
   .container {
     display: flex;
     margin: auto;
     flex-wrap: wrap;
     ${media.tabletMini`max-width: 30rem;`}
-    ${media.tablet`max-width: 50rem;`}
-    ${media.laptop`max-width: 60rem;`}
-    background-color: salmon;
+    ${media.tablet`max-width: 45rem;`}
+    ${media.laptop`max-width: 62rem;`}
   }
   .card {
-    margin: 1rem auto;
-    padding: 1.2rem;
+    margin: 0.5rem auto;
+    padding: 1.5rem;
     width: 22rem;
-    height: 13rem;
+    height: 14rem;
+    ${media.tablet`width: 20rem; height: 14rem;`}
+    ${media.laptop`width: 24rem; height: 14rem;`}
     background-color: white;
-    border-radius: 15px;
+    border: 2px solid black;
+    box-shadow: 6px 6px ${Colors.mediumGray};
   }
   .field {
     display: inline-block;
     margin-right: 0.4rem;
-    font-size: 1.8rem;
+    font-size: 2rem;
     vertical-align: middle;
+    font-family: 'Oswald';
+    font-family: 'Staatliches';
   }
   .link,
   .description {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     padding: 0.5rem 0;
   }
   .link {
     cursor: pointer;
     display: block;
+    margin-top: 0.4rem;
+    font-family: 'Merriweather';
     &:hover {
-      color: pink;
+      color: ${Colors.mediumGray};
     }
   }
   .description {
     line-height: 1.6rem;
+    padding-bottom: 1rem;
+  }
+  a {
+    color: black;
   }
 `;
 
@@ -79,7 +95,7 @@ function Archiving() {
             <div className="field">Creative Portfolio</div>
             <div className="link">hakyungjoo.com</div>
             <div className="description">
-              P5.js, ML5.js, Scratch, GAN 등을 활용한 여러 창의적인 프로젝트 기록 웹사이트입니다.
+              p5.js, ml5.js, Scratch, GAN 등을 활용한 여러 창의적인 프로젝트 기록 웹사이트입니다.
             </div>
           </a>
         </div>

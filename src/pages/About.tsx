@@ -13,53 +13,55 @@ import { Colors, GlobalStyle } from '../components/utils/_var';
 
 const AboutWrapper = styled.div`
   .main {
-    margin: 2rem 1.5rem 0;
-    min-height: 27rem;
-    ${media.large`margin: 2rem auto 0; max-width: 75rem;`}
+    margin: 1.5rem 1.5rem 0;
+    min-height: 26rem;
+    ${media.large`margin: 1.5rem auto 0; max-width: 75rem;`}
     background-color: ${Colors.beige};
     border-top: 3px solid ${Colors.black};
     border-left: 3px solid ${Colors.black};
     border-right: 3px solid ${Colors.black};
-    /* background-color: lime; */
   }
   .icon {
     margin-right: 1rem;
     width: 2.75rem;
     vertical-align: top;
   }
-  .field {
-    font-size: 0.9rem;
-    ${media.laptop`font-size: 1.1rem;`}
-    font-weight: bold;
-  }
   .container {
-    display: grid;
     background-color: white;
     border: 2px solid black;
     box-shadow: 6px 6px ${Colors.mediumGray};
-    margin: auto auto 1.5rem;
+    margin: auto;
     font-size: 0.9rem;
-    ${media.tablet`max-width: 50rem;`}
-    ${media.laptop`max-width: 57.5rem;  margin: auto; font-size: 1rem;`}
-    height: 15rem;
-    padding: 2rem 1rem;
-    grid-template-areas:
-      'info' 'birth' 'education'
-      'mobile' 'email' 'github';
-    ${media.tabletMini`grid-template-areas:
+    padding: 1.5rem 1rem;
+    height: 24.5rem;
+    width: 80%;
+    min-width: 17rem;
+    text-align: center;
+    justify-content: center;
+    ${media.tablet`display: grid; padding: 2rem 1rem; text-align: left; width: 42rem; height: 15rem;`}
+    ${media.laptop`width: 57.5rem; height: 16rem; font-size: 1rem; padding: 3rem 1.5rem;`}
+    ${media.tablet`grid-template-areas:
       'info birth'
       'education mobile'
       'email github';
    `}
     ${media.tablet`grid-template-columns: 50% 50%;`}
-    ${media.tablet`grid-template-areas:
+    ${media.laptop`grid-template-areas:
       'info birth education'
-      'mobile email github'
-    ;`}
-    ${media.tablet`grid-template-columns: 33% 33% 33%;`}
+      'mobile email github';`}
+    ${media.laptop`grid-template-columns: 33% 33% 33%;`}
   }
   .info-container {
     display: inline-block;
+  }
+  .name,
+  .birth,
+  .education,
+  .mobile,
+  .github,
+  .email {
+    margin: 0 auto;
+    ${media.laptop`margin: .3rem auto 0;`}
   }
   .name {
     grid-area: info;
@@ -79,9 +81,25 @@ const AboutWrapper = styled.div`
   .github {
     grid-area: github;
   }
-  .content {
+  .field {
+    text-align: left;
+    padding-left: 1.5rem;
     font-size: 0.9rem;
+    ${media.laptop`font-size: 1.1rem;`}
+    font-weight: bold;
+  }
+  .content {
+    width: 10rem;
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    text-align: left;
+    font-size: 0.9rem;
+    ${media.tablet`width: 12rem; margin-bottom: auto;`}
     ${media.laptop`font-size: 1rem;`}
+    /* background-color: lime; */
+  }
+  a {
+    color: black;
   }
 `;
 
