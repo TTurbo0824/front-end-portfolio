@@ -4,24 +4,24 @@ import { Colors } from '../components/utils/_var';
 
 const IntroWrapper = styled.div`
   .main {
-    min-height: 12rem;
+    min-height: 9.75rem;
     margin: 0 1.5rem;
-    ${media.large`margin: 0 auto; max-width: 75rem;`}
+    ${media.tablet`min-height: 10.75rem;`}
+    ${media.large`margin: 0 auto; max-width: 75rem; min-height: 11.5rem;`}
     background-color: ${Colors.beige};
-    border-left: 3px solid ${Colors.black};
-    border-right: 3px solid ${Colors.black};
+    border-left: 3px solid ${Colors.backgroundColor};
+    border-right: 3px solid ${Colors.backgroundColor};
     font-family: 'Black Han Sans';
-    /* background-color: lime; */
   }
   .intro-title {
     margin: 2rem auto;
-    padding-top: 2.5rem;
+    padding-top: 1.75rem;
     padding-bottom: 0;
     text-align: center;
-    font-size: 3.8rem;
+    font-size: 3.2rem;
+    ${media.tablet`padding-top: 1.8rem; font-size: 3.8rem;`}
     text-transform: uppercase;
     font-family: 'Black Han Sans';
-    /* background-color: palegoldenrod; */
   }
   .container {
     display: flex;
@@ -34,8 +34,11 @@ const IntroWrapper = styled.div`
   .intro {
     margin: -1.25rem auto 0;
     text-align: center;
-    font-size: 2rem;
+    font-size: 1.5rem;
+    ${media.tablet`font-size: 1.75rem;`}
     font-family: 'Do Hyeon';
+    width: fit-content;
+    border-bottom: 2px solid black;
   }
 `;
 

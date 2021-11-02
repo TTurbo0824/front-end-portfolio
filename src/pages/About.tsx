@@ -14,12 +14,14 @@ import { Colors, GlobalStyle } from '../components/utils/_var';
 const AboutWrapper = styled.div`
   .main {
     margin: 1.5rem 1.5rem 0;
-    min-height: 26rem;
+    min-height: 35rem;
+    ${media.tablet`min-height: 25.5rem;`}
+    ${media.laptop`min-height: 26.5rem;`}
     ${media.large`margin: 1.5rem auto 0; max-width: 75rem;`}
     background-color: ${Colors.beige};
-    border-top: 3px solid ${Colors.black};
-    border-left: 3px solid ${Colors.black};
-    border-right: 3px solid ${Colors.black};
+    border-top: 3px solid ${Colors.backgroundColor};
+    border-left: 3px solid ${Colors.backgroundColor};
+    border-right: 3px solid ${Colors.backgroundColor};
   }
   .icon {
     margin-right: 1rem;
@@ -84,9 +86,9 @@ const AboutWrapper = styled.div`
   .field {
     text-align: left;
     padding-left: 1.5rem;
-    font-size: 0.9rem;
-    ${media.laptop`font-size: 1.1rem;`}
-    font-weight: bold;
+    font-family: 'Do Hyeon';
+    font-size: 1.1rem;
+    ${media.laptop`font-size: 1.25rem;`}
   }
   .content {
     width: 10rem;
@@ -96,7 +98,6 @@ const AboutWrapper = styled.div`
     font-size: 0.9rem;
     ${media.tablet`width: 12rem; margin-bottom: auto;`}
     ${media.laptop`font-size: 1rem;`}
-    /* background-color: lime; */
   }
   a {
     color: black;

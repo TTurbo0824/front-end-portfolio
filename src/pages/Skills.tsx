@@ -5,13 +5,12 @@ import { Colors, GlobalStyle } from '../components/utils/_var';
 const SkillWrapper = styled.div`
   .main {
     margin: 1.5rem 1.5rem 0;
-    border-top: 3px solid ${Colors.black};
-
+    border-top: 3px solid ${Colors.backgroundColor};
     ${media.large`margin: 1.5rem auto 0; max-width: 75rem;`}
     min-height: 22rem;
     background-color: ${Colors.beige};
-    border-left: 3px solid ${Colors.black};
-    border-right: 3px solid ${Colors.black};
+    border-left: 3px solid ${Colors.backgroundColor};
+    border-right: 3px solid ${Colors.backgroundColor};
   }
   .field {
     text-align: center;
@@ -86,7 +85,7 @@ function Skills() {
                 <div className="field">{skill}</div>
                 <img
                   className="image"
-                  src={`/images/${skillList[skill]}.png`}
+                  src={`https://tturbo0824.github.io/front-end-portfolio/images/${skillList[skill]}.png`}
                   alt={skillList[skill]}
                 />
               </div>

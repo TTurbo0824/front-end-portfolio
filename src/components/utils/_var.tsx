@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import { media } from './_media-queries';
 
 const Colors = {
   black: '#303030',
@@ -13,9 +14,11 @@ const Colors = {
 const GlobalStyle = createGlobalStyle`
   .title {
     margin: 0 auto;
-    padding: 2rem;
     text-align: center;
-    font-size: 3.5rem;
+    padding-top: 1.5rem;
+    padding-bottom: 2rem;
+    font-size: 3rem;
+    ${media.tablet`font-size: 3.5rem;`}
     text-transform: uppercase;
     font-family: 'Anton';
   }

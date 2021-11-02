@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { media } from './utils/_media-queries';
 import { Colors } from './utils/_var';
 
 const FooterWrapper = styled.div`
@@ -10,12 +11,12 @@ const FooterWrapper = styled.div`
     display: flex;
   }
   .copyright {
-    color: black;
-    color: ${Colors.beige};
-    font-size: 1.2rem;
+    margin: 1.75rem auto 1rem;
     font-family: 'Bebas Neue';
     text-align: right;
-    margin: 2.5rem auto 1rem;
+    color: ${Colors.beige};
+    font-size: 1.1rem;
+    ${media.tablet`font-size: 1.2rem;`}
   }
 `;
 

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import AliceCarousel, { EventObject } from 'react-alice-carousel';
+import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import { media } from '../components/utils/_media-queries';
 import { Colors, GlobalStyle } from '../components/utils/_var';
@@ -10,14 +10,16 @@ const ProjectWrapper = styled.div`
     min-height: 22rem;
     ${media.large`margin: 1.5rem auto 0; max-width: 75rem;`}
     background-color: ${Colors.beige};
-    border-bottom: 3px solid ${Colors.black};
-    border-left: 3px solid ${Colors.black};
-    border-right: 3px solid ${Colors.black};
-    /* background-color: pink; */
+    border-bottom: 3px solid ${Colors.backgroundColor};
+    border-left: 3px solid ${Colors.backgroundColor};
+    border-right: 3px solid ${Colors.backgroundColor};
   }
   .container {
     display: flex;
     margin: auto;
+  }
+  .container:last-child {
+    margin-bottom: 1.5rem;
   }
   .card {
     display: grid;
@@ -25,20 +27,19 @@ const ProjectWrapper = styled.div`
     grid-template-columns: 100%;
     ${media.laptop`grid-template-areas: 'title title' 'slide explanation';`}
     ${media.laptop`grid-template-columns: 50% 50%;`}
-    margin: .5rem auto 2.5rem;
+    margin: .5rem auto 1.5rem;
     border: 2px solid black;
     min-height: 20rem;
     width: 85%;
-    /* ${media.tabletMini`width: 35rem;`} */
-    ${media.tablet`width: 42rem;`}
-    ${media.laptop`width: 55rem; min-height: 25rem;`}
+    ${media.tablet`width: 42rem; padding-bottom: 1.75rem;`}
+    ${media.laptop`width: 55rem; min-height: 25rem; margin: .5rem auto 1.75rem;`}
     background-color: white;
-    padding: 1rem;
+    padding: 1.5rem;
+    padding-top: 1rem;
     box-shadow: 6px 6px ${Colors.mediumGray};
   }
   .field {
     grid-area: title;
-    /* font-family: 'Merriweather'; */
     font-size: 1.5rem;
     font-family: 'Staatliches';
     text-align: center;
@@ -107,7 +108,7 @@ function Projects() {
   const M4MList = ['m4m_1', 'm4m_2', 'm4m_3', 'm4m_4', 'm4m_5'];
   const M4MItems = M4MList.map((image, idx) => (
     <img
-      src={`/images/projects/${image}.png`}
+      src={`https://tturbo0824.github.io/front-end-portfolio/images/projects/${image}.png`}
       key={idx}
       className="img"
       onDragStart={handleDragStart}
@@ -117,7 +118,7 @@ function Projects() {
   const MunjiOutList = ['munjiout_1', 'munjiout_2', 'munjiout_3', 'munjiout_4'];
   const MunjiOutItems = MunjiOutList.map((image, idx) => (
     <img
-      src={`/images/projects/${image}.png`}
+      src={`https://tturbo0824.github.io/front-end-portfolio/images/projects/${image}.png`}
       key={idx}
       className="img"
       onDragStart={handleDragStart}
@@ -132,7 +133,7 @@ function Projects() {
   ];
   const GuessEmojiItems = GuessEmojiList.map((image, idx) => (
     <img
-      src={`/images/projects/${image}`}
+      src={`https://tturbo0824.github.io/front-end-portfolio/images/projects/${image}`}
       key={idx}
       className="img"
       onDragStart={handleDragStart}

@@ -32,9 +32,8 @@ const MainPageWrapper = styled.div`
     ${media.large`margin: 0 auto; max-width: 75rem;`}
     padding-bottom: 2rem;
     background-color: ${Colors.beige};
-    /* background-color: ${Colors.backgroundColor}; */
-    border-left: 3px solid black;
-    border-right: 3px solid black;
+    border-left: 3px solid ${Colors.backgroundColor};
+    border-right: 3px solid ${Colors.backgroundColor};
   }
   .menu-container {
     display: flex;
@@ -131,7 +130,7 @@ function MainPage() {
 
   return (
     <MainPageWrapper>
-      <FixedContainer borderBottom={scrolled ? 'black' : 'Colors.pink'}>
+      <FixedContainer borderBottom={scrolled ? 'Colors.backgroundColor' : 'Colors.pink'}>
         <div className={`menu-container ${navState}`} onClick={handleClick}>
           {navState === 'deactive' ? (
             <FontAwesomeIcon className="menu" icon={faBars} size="2x" />
