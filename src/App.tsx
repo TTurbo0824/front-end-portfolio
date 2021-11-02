@@ -1,4 +1,3 @@
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Footer from './components/Footer';
 import MainPage from './pages/MainPage';
 import styled from 'styled-components';
@@ -18,16 +17,12 @@ const AppWrapper = styled.div`
 
 function App() {
   return (
-    <BrowserRouter>
-      <AppWrapper>
-        <div className="App">
-          <Switch>
-            <Route exact path="/" component={MainPage} />
-          </Switch>
-        </div>
-        <Footer />
-      </AppWrapper>
-    </BrowserRouter>
+    <AppWrapper>
+      <div className="App">
+        <MainPage />
+      </div>
+      <Footer />
+    </AppWrapper>
   );
 }
 
