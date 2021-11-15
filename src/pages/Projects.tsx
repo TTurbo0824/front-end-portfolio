@@ -125,6 +125,16 @@ function Projects() {
     />
   ));
 
+  const HaZaList = ['haza_1', 'haza_2', 'haza_3'];
+  const HaZaItems = HaZaList.map((image, idx) => (
+    <img
+      src={`https://tturbo0824.github.io/front-end-portfolio/images/projects/${image}.png`}
+      key={idx}
+      className="img"
+      onDragStart={handleDragStart}
+    />
+  ));
+
   const GuessEmojiList = [
     'guessemoji_1.png',
     'guessemoji_4.gif',
@@ -205,51 +215,6 @@ function Projects() {
         <div className="container">
           <div className="card">
             <div className="field">
-              <div className="korean">하자</div>(Ha-Za)
-            </div>
-            <div className="image-container">
-              <AliceCarousel mouseTracking infinite={true} items={M4MItems} />
-            </div>
-            <div className="content">
-              <div className="line">칸반 시스템에서 영감을 받은 To Do 관리 서비스</div>
-              <div className="line">프로젝트 기간: 2021.10 - 2021.11 (4인 / 2주 팀 프로젝트)</div>
-              <div className="line">포지션: Front-end</div>
-              <div className="line">
-                <a
-                  href="https://music4millennials.live/"
-                  className="link"
-                  target="_blank"
-                  rel="noopener noreferrer">
-                  🔗 배포 링크
-                </a>
-                |
-                <a
-                  href="https://github.com/Ha-Za/Ha-Za"
-                  className="link"
-                  target="_blank"
-                  rel="noopener noreferrer">
-                  GitHub
-                </a>
-                |
-                <a
-                  href="https://github.com/Ha-Za/Ha-Za/wiki"
-                  className="link"
-                  target="_blank"
-                  rel="noopener noreferrer">
-                  기획서
-                </a>
-              </div>
-              <div className="line">담당업무</div>
-              <ul>
-                <li>프론트엔드: 로그인 모달, 회원 가입 모달, 회원 정보 페이지 구현</li>
-              </ul>
-              <div className="line">사용 스택: TypeScript, React, Redux, styled-components</div>
-            </div>
-          </div>
-        </div>
-        <div className="container">
-          <div className="card">
-            <div className="field">
               <div className="korean">먼지아웃</div> (MunjiOut)
             </div>
             <div className="image-container">
@@ -296,6 +261,52 @@ function Projects() {
                 사용스택: Node.js, Express.js, JWT, MySQL, Sequelize, ORM, AWS, EC2, S3, RDS, Route
                 53
               </div>
+            </div>
+          </div>
+        </div>
+        <div className="container">
+          <div className="card">
+            <div className="field">
+              <div className="korean">하자</div>(Ha-Za)
+            </div>
+            <div className="image-container">
+              <AliceCarousel mouseTracking infinite={true} items={HaZaItems} />
+            </div>
+            <div className="content">
+              <div className="line">칸반 시스템에서 영감을 받은 To Do 관리 서비스</div>
+              <div className="line">프로젝트 기간: 2021.10 - 2021.11 (4인 / 2주 팀 프로젝트)</div>
+              <div className="line">포지션: Full Stack</div>
+              <div className="line">
+                <a
+                  href="https://ha-za.live/"
+                  className="link"
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  🔗 배포 링크
+                </a>
+                |
+                <a
+                  href="https://github.com/Ha-Za/Ha-Za"
+                  className="link"
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  GitHub
+                </a>
+                |
+                <a
+                  href="https://github.com/Ha-Za/Ha-Za/wiki"
+                  className="link"
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  기획서
+                </a>
+              </div>
+              <div className="line">담당업무</div>
+              <ul>
+                <li>프론트엔드: 로그인 모달, 회원 가입 모달, 회원 정보 페이지, To Do 추가/편집/삭제 기능 구현</li>
+                <li>백엔드: To Do 편집 기능 구현</li>
+              </ul>
+              <div className="line">사용 스택: TypeScript, React, Redux, styled-components</div>
             </div>
           </div>
         </div>
