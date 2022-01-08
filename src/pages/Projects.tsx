@@ -104,7 +104,7 @@ function Projects() {
   const WalkingDogList = ['walkingdog_1', 'walkingdog_2', 'walkingdog_3', 'walkingdog_4'];
   const WalkingDogItems = WalkingDogList.map((image, idx) => (
     <img
-      src={`https://tturbo0824.github.io/front-end-portfolio/images/projects/${image}`}
+      src={`https://tturbo0824.github.io/front-end-portfolio/images/projects/${image}.png`}
       key={idx}
       className="img"
       onDragStart={handleDragStart}
