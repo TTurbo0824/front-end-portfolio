@@ -1,5 +1,5 @@
 # KJ Ha 웹 개발자 포트폴리오
-#### ⇒ [배포 링크](https://https://hkj-portfolio.com)
+#### ⇒ [배포 링크](https://hkj-portfolio.com/)
 
 # Tech Stack
 <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=TypeScript&logoColor=white"/></a>
