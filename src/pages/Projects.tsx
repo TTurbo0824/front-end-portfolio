@@ -96,6 +96,9 @@ const ProjectWrapper = styled.div`
   .line:last-child {
     padding-top: 0.5rem;
   }
+  li {
+    margin-bottom: 0.5rem;
+  }
 `;
 
 function Projects() {
@@ -106,6 +109,7 @@ function Projects() {
     <img
       src={`https://tturbo0824.github.io/front-end-portfolio/images/projects/${image}.png`}
       key={idx}
+      alt={`${image}_${idx}`}
       className="img"
       onDragStart={handleDragStart}
     />
@@ -116,6 +120,7 @@ function Projects() {
     <img
       src={`https://tturbo0824.github.io/front-end-portfolio/images/projects/${image}.png`}
       key={idx}
+      alt={`${image}_${idx}`}
       className="img"
       onDragStart={handleDragStart}
     />
@@ -126,6 +131,7 @@ function Projects() {
     <img
       src={`https://tturbo0824.github.io/front-end-portfolio/images/projects/${image}.png`}
       key={idx}
+      alt={`${image}_${idx}`}
       className="img"
       onDragStart={handleDragStart}
     />
@@ -136,6 +142,7 @@ function Projects() {
     <img
       src={`https://tturbo0824.github.io/front-end-portfolio/images/projects/${image}.png`}
       key={idx}
+      alt={`${image}_${idx}`}
       className="img"
       onDragStart={handleDragStart}
     />
@@ -148,7 +155,9 @@ function Projects() {
         <div className="title">Projects</div>
         <div className="container">
           <div className="card">
-            <div className="field">WalkingDog</div>
+            <div className="field">
+              <div className="korean">워킹도그</div> (WalkingDog)
+            </div>
             <div className="image-container">
               <AliceCarousel mouseTracking infinite={true} items={WalkingDogItems} />
             </div>

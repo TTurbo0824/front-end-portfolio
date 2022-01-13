@@ -12,17 +12,19 @@ import { media } from '../components/utils/_media-queries';
 import { Colors } from '../components/utils/_var';
 
 interface InnerScreen {
-  borderBottom: string;
+  showing: string;
 }
 
+interface BottomScreen {
+  isShowing: string;
+}
 const FixedContainer = styled.div<InnerScreen>`
   position: fixed;
   top: 0;
   z-index: 10;
-  height: 3.8rem;
   background-color: ${Colors.backgroundColor};
-  border-bottom: 3px solid ${(props) => props.borderBottom};
   width: 100vw;
+  height: ${(props) => props.showing};
 `;
 
 const MainPageWrapper = styled.div`
@@ -91,6 +93,22 @@ const MainPageWrapper = styled.div`
   }
 `;
 
+const BottomSpace = styled.div`
+  height: 1rem;
+`;
+
+const BottomFooter = styled.span<BottomScreen>`
+  font-family: 'Bebas Neue';
+  text-align: center;
+  color: ${Colors.beige};
+  font-size: 1.1rem;
+  display: ${(props) => props.isShowing};
+  position: absolute;
+  bottom: 0%;
+  left: 0%;
+  margin: 0 1.5rem 1rem;
+`;
+
 function MainPage() {
   const [navState, setNavState] = useState('active');
   const [scrolled, setScrolled] = useState(false);
@@ -128,9 +146,28 @@ function MainPage() {
     } else setNavState('deactive');
   };
 
+  const endpoints = [
+    {
+      name: 'About',
+      endpoint: '#about'
+    },
+    {
+      name: 'Skills',
+      endpoint: '#skills'
+    },
+    {
+      name: 'Archiving',
+      endpoint: '#archiving'
+    },
+    {
+      name: 'Project',
+      endpoint: '#projects'
+    }
+  ];
+
   return (
     <MainPageWrapper>
-      <FixedContainer borderBottom={scrolled ? 'Colors.backgroundColor' : 'Colors.pink'}>
+      <FixedContainer showing={navState === 'close' ? '100vh' : '3.8rem'}>
         <div className={`menu-container ${navState}`} onClick={handleClick}>
           {navState === 'deactive' ? (
             <FontAwesomeIcon className="menu" icon={faBars} size="2x" />
@@ -139,18 +176,14 @@ function MainPage() {
           )}
         </div>
         <div className={`header-container ${navState}`}>
-          <AnchorLink onClick={handleClick} href="#about">
-            About
-          </AnchorLink>
-          <AnchorLink onClick={handleClick} href="#skills">
-            Skills
-          </AnchorLink>
-          <AnchorLink onClick={handleClick} href="#archiving">
-            Archiving
-          </AnchorLink>
-          <AnchorLink onClick={handleClick} href="#projects">
-            Project
-          </AnchorLink>
+          {endpoints.map((el) => (
+            <>
+              <AnchorLink onClick={handleClick} href={el.endpoint}>
+                {el.name}
+              </AnchorLink>
+              <BottomSpace />
+            </>
+          ))}
           <a
             href="https://extreme-cork-bd1.notion.site/KJ-Ha-dc0ac56756d34e2d956028c4a80cec78"
             target="_blank"
@@ -159,6 +192,9 @@ function MainPage() {
             CV
           </a>
         </div>
+        <BottomFooter isShowing={navState === 'close' ? 'block' : 'none'}>
+          copyright &copy; {new Date().getFullYear()} Kyungjoo Ha All rights reserved.
+        </BottomFooter>
       </FixedContainer>
       <div className="space" />
       <Intro />
