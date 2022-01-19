@@ -200,7 +200,7 @@ function Projects() {
                   조회/검색 기능, 반려견 산책 요청/취소 기능, 이용 서비스 평점/후기 등록/수정/삭제
                   기능
                 </li>
-                <li>배포: EC2, S3, CloudFront 등 AWS 서비스를 통한 배포</li>
+                <li>배포: EC2, S3, RDS 등 AWS 서비스를 통한 배포</li>
               </ul>
               <div className="line">
                 사용 스택: React, Redux, styled-components, Node.js, Express.js, MySQL, Sequelize
